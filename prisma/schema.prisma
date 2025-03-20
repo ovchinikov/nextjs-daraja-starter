@@ -17,7 +17,6 @@ model MpesaTransaction {
   id                 String    @id @default(uuid())
   checkoutRequestId  String    @unique
   merchantRequestId  String    @unique
-  transactionId      String    @unique
   phoneNumber        String
   email              String?
   amount             Float
@@ -31,6 +30,5 @@ model MpesaTransaction {
 
   @@index([checkoutRequestId])
   @@index([merchantRequestId])
-  @@index([transactionId])
   @@index([status])
 }
