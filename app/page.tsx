@@ -1,23 +1,24 @@
+import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main>
+    <main className='p-4'>
       <section className=''>
-        <div>
+        <div className='flex flex-col md:flex-row gap-10'>
           <div>
-            <h1>
+            <h1 className='text-4xl font-bold'>
               Have you been duped by all the fake financial gurus out there?{' '}
             </h1>
-            <p>
+            <p className='text-lg mt-4 leading-7'>
               They say, sacrifice that $5 on coffee and invest it in the stock.
               What they don&apos;t is the they didn&apos;t get rich using the
               methods they preach!
             </p>
 
-            <Link href='/buy-now'>
-              <button>Buy now</button>
+            <Link href='/buy-now' className='mt-4 inline-block'>
+              <Button>Buy now</Button>
             </Link>
           </div>
 
@@ -30,13 +31,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section>
-        <h1>What is your financial strategy?</h1>
-        <p>Does any of these apply to you to currently?</p>
+      <section className='mt-16'>
+        <h1 className='text-2xl font-bold'>What is your financial strategy?</h1>
+        <p className='mt-2 text-lg leading-7'>
+          Does any of these apply to you to currently?
+        </p>
 
-        <div>
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-4 mt-4'>
           <div>
-            <h2>The sidewalk financial plan</h2>
+            <h2 className='text-xl font-bold'>The sidewalk financial plan</h2>
             <p>
               You the YOLO type of guy. You spend whatever you get, instant
               gratification is your best friend. You hardly think abouut
@@ -48,7 +51,7 @@ export default function Home() {
           </div>
 
           <div>
-            <h2>The Slowlane financial plan</h2>
+            <h2 className='text-xl font-bold'> The Slowlane financial plan</h2>
             <p>
               You are the type of person that believes in the 40-40-40 plan. You
               work 40 hours a week, for 40 years and retire on 40% of your
@@ -59,53 +62,53 @@ export default function Home() {
           </div>
 
           <div>
-            <h1>The Fastlane Financial Plane</h1>
+            <h2 className='text-xl font-bold'>The Fastlane Financial Plane</h2>
             <p>
               You the type of person that believes in creating a business that
               can scale. You don&apos;t have the word budget in your vocubulary.
               Guess how many are in this category? They are the 1% of the
               population. They&apos;re the types of guys who don&apos;t follow
               convential advice.
-              <br></br>
+              <br />
+              <br />
               If you listen to the masses, you&apos;ll always get the masses
               results. If you want to be rich, you need to do what the rich do.
             </p>
           </div>
         </div>
 
-        <Link href='/buy-now'>
-          <button>Buy now</button>
+        <Link href='/buy-now' className='mt-4 inline-block'>
+          <Button>Buy now</Button>
         </Link>
       </section>
 
-      <section>
-        <h1>
+      <section className='mt-16'>
+        <h1 className='text-2xl font-bold'>
           Join the million of others who&apos;ve rejected Financial mediocrity
           and gone Fastlane
         </h1>
 
-        <div>
-          <p>Spoiler Alert!</p>
-          <h2>
+        <div className=' mt-4'>
+          <p className='font-bold'>Spoiler Alert!</p>
+          <h2 className='mt-2 text-xl font-bold'>
             Your financial guru didn&apos;t get rich with the methods they
             preach about{' '}
           </h2>
-          <p>
+          <p className='mt-4'>
             They got rich by selling you their books, their courses, their
             seminars. They got rich by selling you the dream of getting rich.
             They got rich by selling you the dream of getting rich fast. They
             got rich by selling you the dream of getting rich in a short period
             of time.
           </p>
-          <p>
+          <p className='mt-4'>
             I call this the Paradox of practice in my book. Would you rather get
             advice from a person whose started multiple businesses or someone
             who preaches what they&apos;ve never done? I bet you guessed it
             right
           </p>
-
-          <Link href='/buy-now'>
-            <button>Buy now</button>
+          <Link href='/buy-now' className='mt-4 inline-block'>
+            <Button>Buy now</Button>
           </Link>
         </div>
 
@@ -117,38 +120,44 @@ export default function Home() {
         />
       </section>
 
-      <section>
-        <h1>What you&apos;ll learn in this book</h1>
-        <p>
+      <section className='mt-16'>
+        <h1 className='text-xl font-bold'>
+          What you&apos;ll learn in this book
+        </h1>
+        <p className='mt-4'>
           Only unconvential wisdom in this great book. You&apos;ll never get
-          this book the bestseller list.... But guess what, those who read it
-          willl tell you themselves
+          this book on the bestseller list.... But guess what, those who read it
+          willl tell you the impact this book has made.
         </p>
 
-        <div>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-4 mt-4'>
           <div>
-            <h2>The 3 financial roads. Which one are you driving?</h2>
-            <ul>
-              <li>The Sidewalk</li>
-              <li>The Slowlane</li>
-              <li>The Fastlane</li>
+            <h2 className='text-lg font-bold'>
+              The 3 financial roads. Which one are you driving?
+            </h2>
+            <ul className='list-disc list-inside'>
+              <li className='text-lg'>The Sidewalk</li>
+              <li className='text-lg'>The Slowlane</li>
+              <li className='text-lg'>The Fastlane</li>
             </ul>
           </div>
 
           <div>
-            <h2>The CENTS framework for starting a business</h2>
-            <ul>
-              <li>Control</li>
-              <li>Entry</li>
-              <li>Need</li>
-              <li>Time</li>
-              <li>Scale</li>
+            <h2 className='text-xl font-bold'>
+              The CENTS framework for starting a business
+            </h2>
+            <ul className='list-disc list-inside'>
+              <li className='text-lg'>The Commandment of Control</li>
+              <li className='text-lg'>The Commandment of Entry</li>
+              <li className='text-lg'>The Commandment of Need</li>
+              <li className='text-lg'>The Commandment of Time</li>
+              <li className='text-lg'>The Commandment of Scale</li>
             </ul>
           </div>
         </div>
 
-        <Link href='/buy-now'>
-          <button>Buy now</button>
+        <Link href='/buy-now' className='mt-4 inline-block'>
+          <Button>Buy now</Button>
         </Link>
       </section>
 
