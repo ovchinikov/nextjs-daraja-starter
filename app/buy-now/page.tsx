@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import Image from 'next/image';
 
 export default function Page() {
   return (
@@ -32,6 +33,10 @@ export default function Page() {
             Checkout
           </Button>
         </form>
+        <div className='flex items-center justify-center gap-2'>
+          <h1>Powered by</h1>
+          <Image src='/Mpesa-Logo.png' width={100} height={100} alt='M-PESA' />
+        </div>
       </div>
     </div>
   );

@@ -1,0 +1,36 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model MpesaTransaction {
+  id                 String    @id @default(uuid())
+  checkoutRequestId  String    @unique
+  merchantRequestId  String    @unique
+  transactionId      String    @unique
+  phoneNumber        String
+  email              String?
+  amount             Float
+  status             String    @default("PENDING") // PENDING, COMPLETED, FAILED
+  resultCode         Int?
+  resultDesc         String?
+  mpesaReceiptNumber String?
+  transactionDate    DateTime?
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+
+  @@index([checkoutRequestId])
+  @@index([merchantRequestId])
+  @@index([transactionId])
+  @@index([status])
+}
