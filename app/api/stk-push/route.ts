@@ -43,8 +43,7 @@ export const POST = async (req: Request) => {
       'base64',
     );
 
-    const callbackUrl =
-      'https://c27e-102-219-208-170.ngrok-free.app/api/stk-push/callback';
+    const callbackUrl = `${process.env.NGROK_URL}/api/stk-push/callback`;
 
     const requestBody = {
       BusinessShortCode: '174379',
