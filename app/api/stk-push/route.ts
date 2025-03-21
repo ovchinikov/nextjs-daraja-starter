@@ -76,7 +76,7 @@ export const POST = async (req: Request) => {
 
     //save to database
 
-    const transaction = await prisma.mpesaTransaction.create({
+    await prisma.mpesaTransaction.create({
       data: {
         merchantRequestId: mpesaResponseData.MerchantRequestID,
         checkoutRequestId: mpesaResponseData.CheckoutRequestID,
