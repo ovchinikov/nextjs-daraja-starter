@@ -1,0 +1,32 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    depends_on:
+      - postgres
+    environment:
+      - DATABASE_URL=postgresql://postgres:password@postgres:5432/daraja-mpesa?sslmode=disable
+      - M_PESA_CONSUMER_KEY=${M_PESA_CONSUMER_KEY}
+      - M_PESA_CONSUMER_SECRET=${M_PESA_CONSUMER_SECRET}
+      - M_PESA_PASSKEY=${M_PESA_PASSKEY}
+      - NGROK_URL=${NGROK_URL}
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+
+  postgres:
+    image: postgres:14-alpine
+    ports:
+      - '5435:5432'
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=daraja-mpesa
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+volumes:
+  postgres_data:
