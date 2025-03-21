@@ -19,6 +19,7 @@ model MpesaTransaction {
   merchantRequestId  String    @unique
   phoneNumber        String
   email              String?
+  firstName          String?
   amount             Float
   status             String    @default("PENDING") // PENDING, COMPLETED, FAILED
   resultCode         Int?
